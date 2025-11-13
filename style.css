@@ -267,6 +267,14 @@ body {
 /* Section Styles */
 .section {
     padding: var(--spacing-xl) var(--spacing-md);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container {
@@ -373,11 +381,18 @@ body {
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    transition: var(--transition), opacity 0.4s ease-out, transform 0.4s ease-out;
     border-left: 3px solid var(--accent-tertiary);
     display: flex;
     flex-direction: column;
     height: 100%;
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
 }
 
 .project-card:hover {
@@ -650,12 +665,19 @@ body {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     border-left: 3px solid var(--accent-secondary);
-    transition: var(--transition);
+    transition: var(--transition), opacity 0.4s ease-out, transform 0.4s ease-out;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     position: relative;
     height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.cert-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .cert-card:hover {

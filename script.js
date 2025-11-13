@@ -93,3 +93,32 @@ document.querySelectorAll('a[href^="http"]').forEach(link => {
     link.setAttribute('rel', 'noopener noreferrer');
 });
 
+// Scroll animations - Intersection Observer
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe sections
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+
+// Observe project cards
+document.querySelectorAll('.project-card').forEach(card => {
+    observer.observe(card);
+});
+
+// Observe certification cards
+document.querySelectorAll('.cert-card').forEach(card => {
+    observer.observe(card);
+});
+
