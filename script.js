@@ -122,3 +122,8 @@ document.querySelectorAll('.cert-card').forEach(card => {
     observer.observe(card);
 });
 
+// Observe publication cards
+document.querySelectorAll('.publication-card').forEach(card => {
+    observer.observe(card);
+});
+
